@@ -45,25 +45,34 @@
     <ClInclude Include="Entity.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Monster.h">
+    <ClInclude Include="Damage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Battle.h">
+    <ClInclude Include="Defence.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SKill.h">
+    <ClInclude Include="Attack.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Warrior.h">
+    <ClInclude Include="AttackSpeed.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Archer.h">
+    <ClInclude Include="Skill.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Wizard.h">
+    <ClInclude Include="HP.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Thief.h">
+    <ClInclude Include="MP.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDead.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemValue.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,28 +95,34 @@
     <ClCompile Include="Entity.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Monster.cpp">
+    <ClCompile Include="Damage.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Battle.cpp">
+    <ClCompile Include="Defence.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Resource.cpp">
+    <ClCompile Include="Attack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SKill.cpp">
+    <ClCompile Include="AttackSpeed.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Warrior.cpp">
+    <ClCompile Include="Skill.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Archer.cpp">
+    <ClCompile Include="HP.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Wizard.cpp">
+    <ClCompile Include="MP.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Thief.cpp">
+    <ClCompile Include="PlayerDead.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemValue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
