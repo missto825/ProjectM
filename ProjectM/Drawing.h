@@ -10,9 +10,12 @@ struct Resource
 class Drawing
 {
 public:
-	void Init(HWND hWnd);
-	void RedrawWindow(HWND hWnd);
+	bool _isDelete;
 public:
+	void Init(HWND hWnd);
+	void RedrawWindow(HWND hWnd, bool isDelete);
+public:
+	void 
 	void Draw(LPCWSTR file,int height,int width,int x,int y);
 public:
 	vector<Resource> resource;

@@ -5,11 +5,12 @@
 //
 void Drawing::Init(HWND hwnd)
 {
+	MessageBox(hwnd, L"전저에요", L"저에요", NULL);
 	RECT rect = { 0, 0, WINDOWSIZE_X, WINDOWSIZE_Y };
 	::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 	::SetWindowPos(hwnd, 0, 100, 100, WINDOWSIZE_X, WINDOWSIZE_X, 0);
 }
-void Drawing::RedrawWindow(HWND hWnd)
+void Drawing::RedrawWindow(HWND hWnd, bool isDelete)
 {
 	PAINTSTRUCT PaintStruct;
 	HDC hdc = BeginPaint(hWnd, &PaintStruct);
@@ -24,7 +25,7 @@ void Drawing::RedrawWindow(HWND hWnd)
 		hImage = (HBITMAP)LoadImage(NULL, this->resource[i].file, IMAGE_BITMAP, this->resource[i].height, this->resource[i].width, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
 
 		hOldBitMap = (HBITMAP)SelectObject(hdcBuffer, hImage);
-		 
+		
 		BitBlt(hdc, this->resource[i].x, this->resource[i].y, WINDOWSIZE_X, WINDOWSIZE_Y, hdcBuffer, 0, 0, SRCCOPY);
 
 	}

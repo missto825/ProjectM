@@ -134,6 +134,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         break;
     case WM_CREATE: // create window
         GPalate->Init(hWnd);
+        GPalate->Draw(L"iami.bmp", 100, 100, 100, 100);
+        GPalate->Draw(L"iami.bmp", 200, 200, 200, 200);
         break;
     case WM_COMMAND: // handle menu selection 
         break;
