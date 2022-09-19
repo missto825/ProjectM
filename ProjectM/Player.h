@@ -4,7 +4,7 @@
 class Player : public Entity
 {
 public:
-	Player();
+	Player();	
 	int damage;
 	int hp;
 	int mp;
@@ -16,7 +16,4 @@ public:
 	int itemvalue;
 	int playerdead;
 
-
-
 };
-
