@@ -21,14 +21,10 @@ void Drawing::RedrawWindow(HWND hWnd)
 	{
 		hImage = (HBITMAP)LoadImage(NULL, this->_drawBuffer[i].file, IMAGE_BITMAP, this->_drawBuffer[i].height, this->_drawBuffer[i].width, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
 
-		if (isDraw)
-		{
-			hOldBitMap = (HBITMAP)SelectObject(hdcBuffer, hImage);
-			_myBitmap.push_back(hOldBitMap);
-			BitBlt(hdc, this->_drawBuffer[i].x, this->_drawBuffer[i].y, WINDOWSIZE_X, WINDOWSIZE_Y, hdcBuffer, 0, 0, SRCCOPY);
+		hOldBitMap = (HBITMAP)SelectObject(hdcBuffer, hImage);
+		_myBitmap.push_back(hOldBitMap);
+		BitBlt(hdc, this->_drawBuffer[i].x, this->_drawBuffer[i].y, WINDOWSIZE_X, WINDOWSIZE_Y, hdcBuffer, 0, 0, SRCCOPY);
 
-
-		}
 	}
 	DeleteDC(hdcBuffer);
 	DeleteObject(hBitmapBuffer);

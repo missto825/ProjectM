@@ -17,7 +17,6 @@ public:
 	void RedrawWindow(HWND hWnd);
 public:
 	void Draw(LPCWSTR name,LPCWSTR file,int height,int width,int x,int y);
-	bool isDraw = true;
 public:
 	HWND _hWnd;
 	vector<Resource> _drawBuffer;
