@@ -161,6 +161,7 @@
     <ClInclude Include="SKill.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Thief.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="Wizard.h" />
   </ItemGroup>
@@ -182,6 +183,7 @@
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="SKill.cpp" />
     <ClCompile Include="Thief.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Wizard.cpp" />
   </ItemGroup>

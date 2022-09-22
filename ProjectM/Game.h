@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+class Drawing;
 class Game
 {
 public:
@@ -8,5 +9,11 @@ public:
 	virtual void Init();
 	virtual void Update();
 
-	shared_ptr<Player> gamePlayer;
+	void ShowFps();
+	shared_ptr<Drawing> GetPalette() { return _draw; };
+	shared_ptr<Player> GetPlayer() { return _gamePlayer; };
+
+	HWND _hWnd;
+	shared_ptr<Drawing> _draw;
+	shared_ptr<Player> _gamePlayer;
 };

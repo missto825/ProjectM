@@ -1,13 +1,11 @@
 #include "pch.h"
 #include "Drawing.h"
-
-
-//
 void Drawing::Init(HWND hwnd)
 {
+	_hWnd = hwnd;
 	RECT rect = { 0, 0, WINDOWSIZE_X, WINDOWSIZE_Y };
 	::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
-	::SetWindowPos(hwnd, 0, 100, 100, WINDOWSIZE_X, WINDOWSIZE_X, 0);
+	::SetWindowPos(_hWnd, 0, 100, 100, WINDOWSIZE_X, WINDOWSIZE_X, 0);
 }
 void Drawing::RedrawWindow(HWND hWnd)
 {
@@ -19,27 +17,33 @@ void Drawing::RedrawWindow(HWND hWnd)
 	SelectObject(hdcBuffer, hBitmapBuffer);
 
 	HBITMAP hImage, hOldBitMap;
-	for (int i = 0; i < this->resource.size(); i++)
+	for (int i = 0; i < this->_drawBuffer.size(); i++)
 	{
-		hImage = (HBITMAP)LoadImage(NULL, this->resource[i].file, IMAGE_BITMAP, this->resource[i].height, this->resource[i].width, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+		hImage = (HBITMAP)LoadImage(NULL, this->_drawBuffer[i].file, IMAGE_BITMAP, this->_drawBuffer[i].height, this->_drawBuffer[i].width, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
 
-		hOldBitMap = (HBITMAP)SelectObject(hdcBuffer, hImage);
-		 
-		BitBlt(hdc, this->resource[i].x, this->resource[i].y, WINDOWSIZE_X, WINDOWSIZE_Y, hdcBuffer, 0, 0, SRCCOPY);
+		if (isDraw)
+		{
+			hOldBitMap = (HBITMAP)SelectObject(hdcBuffer, hImage);
+			_myBitmap.push_back(hOldBitMap);
+			BitBlt(hdc, this->_drawBuffer[i].x, this->_drawBuffer[i].y, WINDOWSIZE_X, WINDOWSIZE_Y, hdcBuffer, 0, 0, SRCCOPY);
 
+
+		}
 	}
 	DeleteDC(hdcBuffer);
 	DeleteObject(hBitmapBuffer);
 	EndPaint(hWnd, &PaintStruct);
 }
 
-void Drawing::Draw(LPCWSTR file, int height, int width, int x, int y)
+void Drawing::Draw(LPCWSTR name,LPCWSTR file, int height, int width, int x, int y)
 {
-	Resource _resource;
-	_resource.file = file;
-	_resource.height = height;
-	_resource.width = width;
-	_resource.x = x;
-	_resource.y = y;
-	this->resource.push_back(_resource);
+	//shared_ptr<Resource> resource = make_shared<Resource>();
+	Resource resource;
+	resource.name = name;
+	resource.file = file;
+	resource.height = height;
+	resource.width = width;
+	resource.x = x;
+	resource.y = y;
+	this->_drawBuffer.push_back(resource);
 }

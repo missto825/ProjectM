@@ -29,8 +29,8 @@
 #endif
 #endif
 
-class Resource
-{
-public:
-	void 
-};
+//class Resource
+//{
+//public:
+//	void 
+//};

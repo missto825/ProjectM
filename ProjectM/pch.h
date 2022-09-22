@@ -9,6 +9,8 @@
 #include <list>
 #include <map>
 #include <iostream>
+#include <math.h>
+#include <chrono>
 
 
 using int8 = __int8;
@@ -28,3 +30,19 @@ using namespace std;
 
 // 게임 전역 객체
 extern unique_ptr<class Game> GGame;
+#define DRAW			GGame->GetPalette();
+#define PLAYER			GGame->GetPlayer();
+
+
+#define DECLARE_SINGLE(type)		\
+private:							\
+	type() {}						\
+	~type() {}						\
+public:								\
+	static type* GetInstance()		\
+	{								\
+		static type instance;		\
+		return &instance;			\
+	}								\
+
+#define GET_SINGLE(type)	type::GetInstance()
