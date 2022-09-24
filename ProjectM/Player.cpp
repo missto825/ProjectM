@@ -6,8 +6,8 @@ enum ClassType
     Knight = 1,
     Archer = 2,
     Mage = 3
-}
-    void SelectClass(int playerSelect);
+};
+    void SelectClass(int playerSelect)
     {
         cout << "직업을 선택하세요";
         cout << "[1] 기사";
