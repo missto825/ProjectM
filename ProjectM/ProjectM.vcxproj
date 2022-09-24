@@ -147,10 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Archer.h" />
     <ClInclude Include="Attack.h" />
-    <ClInclude Include="AttackSpeed.h" />
+    <ClInclude Include="Battle.h" />
     <ClInclude Include="Damage.h" />
     <ClInclude Include="Defence.h" />
+    <ClInclude Include="AttackSpeed.h" />
     <ClInclude Include="Drawing.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="framework.h" />
@@ -158,6 +160,7 @@
     <ClInclude Include="HP.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemValue.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="MP.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
@@ -166,18 +169,24 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Thief.h" />
+    <ClInclude Include="Warrior.h" />
+    <ClInclude Include="Wizard.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Attack.cpp" />
-    <ClCompile Include="AttackSpeed.cpp" />
+    <ClCompile Include="Battle.cpp" />
     <ClCompile Include="Damage.cpp" />
     <ClCompile Include="Defence.cpp" />
+    <ClCompile Include="AttackSpeed.cpp" />
     <ClCompile Include="Drawing.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="HP.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemValue.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MP.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -188,7 +197,11 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerDead.cpp" />
     <ClCompile Include="ProjectM.cpp" />
-    <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="SKill.cpp" />
+    <ClCompile Include="Thief.cpp" />
+    <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Wizard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ProjectM.rc" />
