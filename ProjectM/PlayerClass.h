@@ -1,10 +1,15 @@
 #pragma once
 class PlayerClass
 {
+public:
+	int classNum;
+	int mainStat;
+	
+
 };
 
 
-class Wizard
+class Wizard :public PlayerClass
 {
 public:
 	int _wand;

@@ -35,4 +35,13 @@ void SelectClass(int playerSelect)
 
 };
 
-
+Player::Player()
+{
+    switch (_playerClass->classNum)
+    {/*
+    case KNITGHT:
+        _playerStat = */
+    default:
+        break;
+    }
+}
