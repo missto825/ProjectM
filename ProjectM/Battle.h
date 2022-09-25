@@ -1,16 +1,18 @@
 #pragma once
 #include "Monster.h"
-#include "player.h"
-Player iamPlayer;
-class Battle
+#include "Game.h"
+class Battle :public Game
 {
 public:
-	
-	Monster enemy;
+	shared_ptr<Monster> _enemy;
 	
 
 
 public:
-	void InBattle(Monster enemy);
+	void InBattle(shared_ptr<Monster> enemy);
 };
+// 피카츄
+// 1. 플레이어와 몬스터 싸운다는  시점을 가정하고 생긴 클래스
 
+//ex.player hp attack Attack() qkq felid 
+//2. 

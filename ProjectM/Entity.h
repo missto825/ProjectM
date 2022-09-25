@@ -6,12 +6,15 @@ public:
 	int defence;
 	int attack;
 	int attackSpeed;
-	int skill;
 	int hp;
 	int mp;
+	//skill;
 
 public:
-	void ItemValue();
+	virtual void Attack(shared_ptr<Entity> enemy);
+	virtual void Defence(shared_ptr<Entity> enemy,int enemySelect);
 	void PlayerDead();
+public:
+	void ItemValue();
 };
 

@@ -11,8 +11,9 @@
 #include <iostream>
 #include <math.h>
 #include <chrono>
-
-
+#include <thread>
+#include <cstdlib>
+#include <stdlib.h>
 using int8 = __int8;
 using int16 = __int16;
 using int32 = __int32;
@@ -46,3 +47,9 @@ public:								\
 	}								\
 
 #define GET_SINGLE(type)	type::GetInstance()
+
+
+#define RUN 10001
+#define ATTACK 10002
+#define DEFENCE 10003
+#define SKILL 10004

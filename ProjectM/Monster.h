@@ -1,6 +1,20 @@
 #pragma once
-class Monster
+#include "Entity.h"
+#include "Player.h"
+class Monster :public Entity
 {
-    void InMonster();
+public:
+    int _attackCase;
+    int _defenceCase;
+
+
+
+public:
+    int Action();
+    void MonsterDead();
+    shared_ptr<Player> enemy;
+
+    
+
 };
 

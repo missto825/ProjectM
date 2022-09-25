@@ -43,10 +43,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PROJECTM));
 
+    GPalate->Draw(L"전저에요", L"iami.bmp", 100, 100, 100, 100);
     MSG msg;
     unique_ptr<Game> game = make_unique<Game>();
-    GGame->Init();
-    GPalate->Draw(L"전저에요", L"iami.bmp", 100, 100, 100, 100);
     // 기본 메시지 루프입니다:
     while (GetMessage(&msg, nullptr, 0, 0))
     {
@@ -55,7 +54,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
-        GGame->Update();
     }
 
     return (int) msg.wParam;
@@ -114,7 +112,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
-   GGame->_hWnd = hWnd;
 
    return TRUE;
 }
@@ -135,19 +132,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     GetWindowRect(hWnd, &rect);
     switch (msg) {
         break;
+    case WM_CREATE: // create window
+        GGame->Init(hWnd);
+        break;
+    case WM_TIMER:
+        GGame->Update();
     case WM_KEYDOWN:
         switch (wParam)
         {
         case VK_LEFT:
-            GPalate->isDraw = false;
         default:
             break;
         }
     case WM_PAINT: // redraw window
         GPalate->RedrawWindow(hWnd);
-        break;
-    case WM_CREATE: // create window
-        GPalate->Draw(L"전저에요", L"iami.bmp", 100, 100, 100, 100);
         break;
     case WM_COMMAND: // handle menu selection 
         break;
