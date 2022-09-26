@@ -49,7 +49,13 @@ public:								\
 #define GET_SINGLE(type)	type::GetInstance()
 
 
+
 #define RUN 10001
 #define ATTACK 10002
 #define DEFENCE 10003
 #define SKILL 10004
+
+#define KNIGHT 10005
+#define MAGE 10006
+#define ACHER 10007
+#define THIEF 10008

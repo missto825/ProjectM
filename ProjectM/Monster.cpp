@@ -1,10 +1,6 @@
 #include "pch.h"
 #include "Monster.h"
 
-void Monster::InMonster() {
-
-}
-
 int Monster::Action()
 {
 	int _case = rand() % 10;
@@ -17,8 +13,4 @@ int Monster::Action()
 		return DEFENCE;
 		
 	}
-}
-
-DWORD __stdcall Monster::Attack(shared_ptr<Player> enemy)
-{
 }

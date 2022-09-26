@@ -18,3 +18,4 @@ void Warrior::Inwarrior()
 {
 
 }
+
