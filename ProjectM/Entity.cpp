@@ -23,4 +23,18 @@ void Entity::Attack(shared_ptr<Entity> enemy)
 
 void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
 {
+	// 선택이 공격였다면 데미지 감소식 or 반격
+	// 선택이 방어었다면 아무일도 일어나지 않고 리턴
+}
+
+int  Entity::DamageCalcualte()
+{
+	bool isCritical;
+
+	if (isCritical)
+	{
+		(rand() % 100) < _critRate;
+		
+	}
+	_attack
 }

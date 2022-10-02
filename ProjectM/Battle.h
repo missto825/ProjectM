@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 #include "Monster.h"
 #include "Game.h"
 class Battle :public Game
@@ -7,6 +8,10 @@ public:
 	shared_ptr<Monster> _enemy;
 	
 
+
+	shared_ptr<HWND> _attackButton;
+	shared_ptr<HWND> _defenceButton;
+	shared_ptr<HWND> _runButton;
 
 public:
 	void InBattle(shared_ptr<Monster> enemy);

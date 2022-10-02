@@ -59,3 +59,4 @@ public:								\
 #define MAGE 10006
 #define ACHER 10007
 #define THIEF 10008
+

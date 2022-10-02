@@ -159,6 +159,7 @@
     <ClInclude Include="PlayerClass.h" />
     <ClInclude Include="ProjectM.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
@@ -179,6 +180,7 @@
     <ClCompile Include="PlayerClass.cpp" />
     <ClCompile Include="ProjectM.cpp" />
     <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -16,30 +16,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Attack.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Damage.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Defence.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="HP.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemValue.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MP.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDead.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Battle.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -82,34 +58,14 @@
     <ClInclude Include="PlayerClass.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
       <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Attack.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Damage.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Defence.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="HP.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemValue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MP.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDead.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Utils</Filter>
@@ -144,6 +100,10 @@
     <ClCompile Include="PlayerClass.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ProjectM.rc">

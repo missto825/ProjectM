@@ -1,4 +1,5 @@
 #pragma once
+#define DAMAGE ()
 struct Stat
 {
 	int _str; //공격 체력
@@ -35,6 +36,9 @@ public:
 
 	virtual void Attack(shared_ptr<Entity> enemy);
 	virtual void Defence(shared_ptr<Entity> enemy,int enemySelect);
+	virtual int DamageCalcualte();
+	
+
 	void PlayerDead();
 public:
 	void ItemValue();
