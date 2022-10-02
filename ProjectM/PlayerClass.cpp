@@ -10,11 +10,12 @@ void Archer::InArcher()
 {
 
 }
-void Wizard::InWizard()
+void Warrior::Inwarrior()
 {
 
 }
-void Warrior::Inwarrior()
+
+void Mage::InMage()
 {
 
 }

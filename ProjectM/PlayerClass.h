@@ -1,4 +1,6 @@
 #pragma once
+
+
 class PlayerClass
 {
 public:
@@ -6,15 +8,22 @@ public:
 	int mainStat;
 	
 
+
+
+	void Choice1(int PlayerClass1);
+	virtual void InMage();
+	virtual void InThief();
+	virtual void Inwarrior();
+	virtual void InArcher();
 };
 
 
-class Wizard :public PlayerClass
+class Mage :public PlayerClass
 {
 public:
 	int _wand;
 public:
-	void InWizard();
+	void InMage();
 };
 
 

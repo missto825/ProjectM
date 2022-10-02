@@ -55,7 +55,7 @@ public:								\
 #define DEFENCE 10003
 #define SKILL 10004
 
-#define KNIGHT 10005
+#define WARRIOR 10005
 #define MAGE 10006
 #define ACHER 10007
 #define THIEF 10008

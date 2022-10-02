@@ -3,7 +3,10 @@
 #include "Drawing.h"
 #include "Timer.h"
 #include "Battle.h"
+#include "PlayerClass.h"
+#include "PlayerClass.cpp"
 class Drawing;
+
 
 void Game::Init(HWND hWnd)
 {
@@ -35,3 +38,22 @@ void Game::ShowFps()
 
 	::SetWindowText(_hWnd, text);
 }
+void PlayerClass::Choice1(int PlayerClass1)
+{
+	switch (PlayerClass) {
+	case WARRIOR:
+		Inwarrior();
+		break;
+	case MAGE:
+		InMage();
+		break;
+
+	case ACHER:
+		InArcher();
+		break;
+	case THIEF:
+		InThief();
+		break;
+	}
+}
+
