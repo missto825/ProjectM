@@ -62,6 +62,9 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ItemManager.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
@@ -104,6 +107,7 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ItemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ProjectM.rc">

@@ -8,6 +8,8 @@ struct Stat
 	int _int; //마력 마나
 };
 
+
+
 class Entity
 {
 public:
