@@ -18,10 +18,12 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		//버튼이 어느게 눌렸는지 받아온다
 		int select = 0;
 		int eSelect = _enemy->Action();
+		//승열
+		//아현
 		switch (select)
 		{
 		case ATTACK:
-			p->Attack(_enemy);
+			p->Attack(_enemy,eSelect);
 			break;
 		case DEFENCE:
 			p->Defence(_enemy,eSelect);

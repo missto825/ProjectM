@@ -4,11 +4,10 @@ class PlayerClass
 {
 public:
 	int classNum;
-	int mainStat;
-	
+	//주무기 변수 제작
 
 
-
+	//수호
 	void Choice1(int PlayerClass1);
 	virtual void InMage();
 	virtual void InThief();

@@ -4,7 +4,6 @@
 #include "Timer.h"
 #include "Battle.h"
 #include "PlayerClass.h"
-#include "PlayerClass.cpp"
 class Drawing;
 
 
@@ -17,10 +16,11 @@ void Game::Init(HWND hWnd)
 	GET_SINGLE(Timer)->Init();
 
 	// 캐릭터 선택
+	// PlayerSelect();
 	// _player에 집어넣어주는것이 필요하다.
 	// 첫 배틀
+	// InitBattle();
 }
-
 void Game::Update()
 {
 	GET_SINGLE(Timer)->Update();
@@ -38,22 +38,5 @@ void Game::ShowFps()
 
 	::SetWindowText(_hWnd, text);
 }
-void PlayerClass::Choice1(int PlayerClass1)
-{
-	switch (PlayerClass) {
-	case WARRIOR:
-		Inwarrior();
-		break;
-	case MAGE:
-		InMage();
-		break;
 
-	case ACHER:
-		InArcher();
-		break;
-	case THIEF:
-		InThief();
-		break;
-	}
-}
 
