@@ -3,7 +3,6 @@
 #include "Drawing.h"
 void Game::Init()
 {
-
 }
 
 void Game::Update()
