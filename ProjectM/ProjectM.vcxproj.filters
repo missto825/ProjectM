@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -16,115 +8,102 @@
     <Filter Include="Game">
       <UniqueIdentifier>{02e67d83-e78f-4bb5-9604-a77cba1ae4dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{42d6bec8-4883-4a27-b239-bdeffe8e1855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{657423ed-82a3-49aa-b805-f61d8675b8f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ProjectM.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="Battle.h">
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Drawing.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectM.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Damage.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Defence.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Attack.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackSpeed.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Skill.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="HP.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MP.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDead.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemValue.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerClass.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="ProjectM.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Drawing.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Battle.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Damage.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Drawing.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Defence.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Attack.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackSpeed.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Skill.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="HP.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MP.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDead.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemValue.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerClass.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ProjectM.rc">

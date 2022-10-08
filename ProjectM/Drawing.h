@@ -1,6 +1,9 @@
 #pragma once
+
+
 struct Resource
 {
+	LPCWSTR name;
 	LPCWSTR file;
 	int height;
 	int width;
@@ -13,7 +16,9 @@ public:
 	void Init(HWND hWnd);
 	void RedrawWindow(HWND hWnd);
 public:
-	void Draw(LPCWSTR file,int height,int width,int x,int y);
+	void Draw(LPCWSTR name,LPCWSTR file,int height,int width,int x,int y);
 public:
-	vector<Resource> resource;
+	HWND _hWnd;
+	vector<Resource> _drawBuffer;
+	vector<HBITMAP> _myBitmap;
 };

@@ -1,22 +1,16 @@
 #pragma once
 #include "Entity.h"
+#include "Monster.h"
+#include "PlayerClass.h"
 
 class Player : public Entity
 {
 public:
 	Player();
-	int damage;
-	int hp;
-	int mp;
-	int attack;
-	int attackspeed;
-	int skill;
-	int defence;
-	int item;
-	int itemvalue;
-	int playerdead;
+	shared_ptr<PlayerClass> _playerClass;
 
-
+	
+    void IsPlayerDead();
+    void PlayerDead();
 
 };
-

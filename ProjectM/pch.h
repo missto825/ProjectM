@@ -9,8 +9,11 @@
 #include <list>
 #include <map>
 #include <iostream>
-
-
+#include <math.h>
+#include <chrono>
+#include <thread>
+#include <cstdlib>
+#include <stdlib.h>
 using int8 = __int8;
 using int16 = __int16;
 using int32 = __int32;
@@ -28,3 +31,32 @@ using namespace std;
 
 // 게임 전역 객체
 extern unique_ptr<class Game> GGame;
+#define DRAW			GGame->GetPalette();
+#define PLAYER			GGame->GetPlayer();
+
+
+#define DECLARE_SINGLE(type)		\
+private:							\
+	type() {}						\
+	~type() {}						\
+public:								\
+	static type* GetInstance()		\
+	{								\
+		static type instance;		\
+		return &instance;			\
+	}								\
+
+#define GET_SINGLE(type)	type::GetInstance()
+
+
+
+#define RUN 10001
+#define ATTACK 10002
+#define DEFENCE 10003
+#define SKILL 10004
+
+#define WARRIOR 10005
+#define MAGE 10006
+#define ACHER 10007
+#define THIEF 10008
+
