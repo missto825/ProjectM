@@ -2,7 +2,8 @@
 #include "pch.h"
 #include "Monster.h"
 #include "Game.h"
-class Battle :public Game
+#include "Scene.h"
+class Battle :public Game,public Scene
 {
 public:
 	shared_ptr<Monster> _enemy;
@@ -15,6 +16,12 @@ public:
 
 public:
 	void InBattle(shared_ptr<Monster> enemy);
+
+public:
+	void Load() override;
+	void Unload() override;
+	void Render(shared_ptr<Graphics> gfx) override;
+	void Update() override;
 };
 // 피카츄
 // 1. 플레이어와 몬스터 싸운다는  시점을 가정하고 생긴 클래스
