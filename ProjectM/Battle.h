@@ -3,6 +3,7 @@
 #include "Monster.h"
 #include "Game.h"
 #include "Scene.h"
+#include "SpriteSheet.h"
 class Battle :public Game,public Scene
 {
 public:
@@ -17,7 +18,18 @@ public:
 public:
 	void InBattle(shared_ptr<Monster> enemy);
 
+
+
+protected:
+
+	float y = 0.0;
+	float ySpeed = 0.0f;
+
+	shared_ptr<SpriteSheet> sprites;
+
+	int frame = 0;
 public:
+	
 	void Load() override;
 	void Unload() override;
 	void Render(shared_ptr<Graphics> gfx) override;

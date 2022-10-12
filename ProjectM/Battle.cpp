@@ -23,7 +23,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		switch (select)
 		{
 		case ATTACK:
-			p->Attack(_enemy,eSelect);
+			p->Attack(_enemy);
 			break;
 		case DEFENCE:
 			p->Defence(_enemy,eSelect);
@@ -38,7 +38,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		switch (eSelect)
 		{
 		case ATTACK:
-			_enemy->Attack(p,select); //두가지 형태로 만들것
+			_enemy->Attack(p); //두가지 형태로 만들것
 			break;
 		case DEFENCE:
 			_enemy->Defence(p, select);
@@ -50,4 +50,42 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 			p->PlayerDead();
 
 	}
+}
+
+
+
+void Battle::Load()
+{
+	y = ySpeed = 0.0f;
+	
+	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/그래도달팽이는움직인다.png", gfx, 32, 25);
+
+	frame = 0;
+
+}
+
+void Battle::Unload()
+{
+}
+
+void Battle::Render(shared_ptr<Graphics> gfx)
+{
+	gfx->ClearScreen(0.0f, 0.0f, 0.5f);
+	gfx->DrawCircle(325.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
+	gfx->DrawCircle(725.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
+
+	////sprites->
+	sprites->Draw((frame / 10) % 4, 40, 40);
+}
+
+void Battle::Update()
+{
+	ySpeed += 1.0f;
+	y += ySpeed;
+	if (y > 600)
+	{
+		y = 600;
+		ySpeed = -30.0f;
+	}
+	frame++;
 }

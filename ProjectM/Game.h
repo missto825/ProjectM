@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+#include "Graphics.h"
 class Drawing;
 class Game
 {
@@ -16,6 +17,7 @@ public:
 	//InitBattle();
 	// ¼öÈ£
 	//PlayerSelect();
+	shared_ptr<Graphics> graphics;
 	HWND _hWnd;
 	shared_ptr<Drawing> _draw;
 	shared_ptr<Player> _gamePlayer;

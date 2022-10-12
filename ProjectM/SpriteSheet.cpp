@@ -13,9 +13,11 @@ SpriteSheet::SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx)
 		CLSID_WICImagingFactory,
 		NULL,
 		CLSCTX_INPROC_SERVER,
-		IID_IWICImagingFactory,
-		(LPVOID*)&wicFactory);
-	if (hr != S_OK) { return; }
+		IID_PPV_ARGS(&wicFactory));
+	if (FAILED(hr))
+	{
+		return;
+	}
 
 	IWICBitmapDecoder* wicDecoder = NULL;
 	hr = wicFactory->CreateDecoderFromFilename(

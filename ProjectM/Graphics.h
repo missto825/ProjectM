@@ -4,11 +4,11 @@ class Graphics
 {
 private:
 
-	ComPtr<ID2D1Factory> _factory;
-	ComPtr<ID2D1HwndRenderTarget> _rendertarget;
+	ID2D1Factory* _factory;
+	ID2D1HwndRenderTarget* _rendertarget;
 public:
 	Graphics();
-
+	~Graphics();
 	bool Init(HWND windowHandle);
 
 	ComPtr<ID2D1RenderTarget> GetRenderTarget()
@@ -17,7 +17,7 @@ public:
 	}
 
 
-	void BegnDraw() { _rendertarget->BeginDraw(); }
+	void BeginDraw() { _rendertarget->BeginDraw(); }
 	void EndDraw() { _rendertarget->EndDraw(); }
 
 

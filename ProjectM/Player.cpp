@@ -45,3 +45,7 @@ Player::Player()
         break;
     }
 }
+
+void Player::PlayerDead()
+{
+}

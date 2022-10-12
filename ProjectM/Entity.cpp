@@ -20,7 +20,6 @@ void Entity::Attack(shared_ptr<Entity> enemy)
 	double damage = (_attack * 100) / (enemy->_defence + 100);
 
 }
-
 void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
 {
 	// 선택이 공격였다면 데미지 감소식 or 반격
@@ -29,12 +28,12 @@ void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
 
 int  Entity::DamageCalcualte()
 {
-	bool isCritical;
+	bool isCritical = true;
 
 	if (isCritical)
 	{
 		(rand() % 100) < _critRate;
 		
 	}
-	_attack
+	return 0;
 }

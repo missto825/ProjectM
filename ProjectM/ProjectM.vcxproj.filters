@@ -14,6 +14,9 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{657423ed-82a3-49aa-b805-f61d8675b8f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{0715dd2e-7497-46af-916c-2d1082dccdba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle.h">
@@ -125,6 +128,9 @@
     </Image>
     <Image Include="iami.bmp">
       <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\달팽이\그래도달팽이는움직인다.png">
+      <Filter>Resource</Filter>
     </Image>
   </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@ class SceneManager
 	SceneManager() { }
 public:
 	static shared_ptr<Scene> currentScene;
-
+	
 public:
 	static bool Loading;
 
