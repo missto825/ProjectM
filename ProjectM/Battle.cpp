@@ -33,7 +33,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (_enemy->_hp <= 0)
+		if (_enemy->currentHP <= 0)
 			_enemy->MonsterDead();
 		switch (eSelect)
 		{
@@ -46,7 +46,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (p->_hp <= 0)
+		if (p->currentHP <= 0)
 			p->PlayerDead();
 
 	}
@@ -58,7 +58,7 @@ void Battle::Load()
 {
 	y = ySpeed = 0.0f;
 	
-	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/그래도달팽이는움직인다.png", gfx, 32, 25);
+	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/적.png", gfx, 28, 20);
 
 	frame = 0;
 
@@ -70,7 +70,7 @@ void Battle::Unload()
 
 void Battle::Render(shared_ptr<Graphics> gfx)
 {
-	gfx->ClearScreen(0.0f, 0.0f, 0.5f);
+	gfx->ClearScreen(1.0f, 1.0f, 1.0f);
 	gfx->DrawCircle(325.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
 	gfx->DrawCircle(725.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
 

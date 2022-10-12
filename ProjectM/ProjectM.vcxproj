@@ -197,7 +197,9 @@
     <ResourceCompile Include="ProjectM.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Resource\달팽이\그래도달팽이는계속움직인다.png" />
     <Image Include="..\Resource\달팽이\그래도달팽이는움직인다.png" />
+    <Image Include="..\Resource\달팽이\적.png" />
     <Image Include="iami.bmp" />
     <Image Include="ProjectM.ico" />
     <Image Include="small.ico" />
