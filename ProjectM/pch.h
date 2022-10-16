@@ -62,7 +62,8 @@ public:								\
 
 #define GET_SINGLE(type)	type::GetInstance()
 
-
+// 배틀 배경 세로 크기
+#define BATTLESIZE_Y 780
 
 #define RUN 10001
 #define ATTACK 10002

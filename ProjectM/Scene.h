@@ -15,4 +15,3 @@ public:
 	virtual void Render(shared_ptr<Graphics> gfx);
 	virtual void Update();
 };
-
