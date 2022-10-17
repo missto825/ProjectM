@@ -12,9 +12,6 @@ public:
 public:
     int Action();
     void MonsterDead();
-    shared_ptr<Player> enemy;
-
     
 
 };
-
