@@ -5,6 +5,7 @@
 // 1. 작업자를 한명 더 고용해서 몬스터의연산을 시키고, 
 // 플레이어의 선택을 대기한다.
 
+
 // 2. 플레이어 
 void Battle::InBattle(shared_ptr<Monster> enemy)
 {
@@ -34,7 +35,10 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 			break;
 		}
 		if (_enemy->_hp <= 0)
+		{
 			_enemy->MonsterDead();
+			break;
+		}
 		switch (eSelect)
 		{
 		case ATTACK:
@@ -47,7 +51,10 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 			break;
 		}
 		if (p->_hp <= 0)
+		{
 			p->PlayerDead();
+			break;
+		}
 
 	}
 }
@@ -69,7 +76,7 @@ void Battle::Unload()
 void Battle::Render(shared_ptr<Graphics> gfx)
 {
 	backGround->Draw(true);
-	sprites->Draw((frame / 10) % 4, 900, 400);
+	sprites->Draw((frame / 10) % 4, 900, 500);
 }
 
 void Battle::Update()

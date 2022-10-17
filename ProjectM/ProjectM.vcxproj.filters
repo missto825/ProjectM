@@ -72,6 +72,9 @@
     <ClInclude Include="SpriteSheet.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
@@ -123,6 +126,9 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="SpriteSheet.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
