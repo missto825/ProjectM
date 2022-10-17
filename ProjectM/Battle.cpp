@@ -56,10 +56,8 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 
 void Battle::Load()
 {
-	y = ySpeed = 0.0f;
-	
-	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/그래도달팽이는움직인다.png", gfx, 32, 25);
-
+	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/초록달팽이.png", gfx, 28, 20);
+	backGround = make_shared<SpriteSheet>(L"../Resource/배경/헤네시스.png", gfx,true);
 	frame = 0;
 
 }
@@ -70,22 +68,11 @@ void Battle::Unload()
 
 void Battle::Render(shared_ptr<Graphics> gfx)
 {
-	gfx->ClearScreen(0.0f, 0.0f, 0.5f);
-	gfx->DrawCircle(325.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
-	gfx->DrawCircle(725.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
-
-	////sprites->
-	sprites->Draw((frame / 10) % 4, 40, 40);
+	backGround->Draw(true);
+	sprites->Draw((frame / 10) % 4, 900, 400);
 }
 
 void Battle::Update()
 {
-	ySpeed += 1.0f;
-	y += ySpeed;
-	if (y > 600)
-	{
-		y = 600;
-		ySpeed = -30.0f;
-	}
 	frame++;
 }

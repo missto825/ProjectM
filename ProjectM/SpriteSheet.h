@@ -11,10 +11,12 @@ class SpriteSheet
 public:
 	SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx);
 	SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx, int spriteWidth, int spriteHeight);
+	SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx, bool fullScreen);
 
 	~SpriteSheet();
 
 	void Draw();
+	void Draw(bool fullScreen);
 	void Draw(int index, int x, int y);
 
 };
