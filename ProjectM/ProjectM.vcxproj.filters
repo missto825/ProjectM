@@ -79,6 +79,9 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="SpriteSheet.h" />
+    <ClInclude Include="Animator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
@@ -130,6 +133,9 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="SpriteSheet.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp" />

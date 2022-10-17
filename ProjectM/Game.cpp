@@ -24,7 +24,9 @@ void Game::Init(HWND hWnd)
 	graphics->Init(hWnd);
 	graphics->ClearScreen(1.0f, 1.0f, 1.0f);
 	SceneManager::LoadInitialScene(make_shared<Battle>());
-
+	Battle b;
+	shared_ptr<Monster> snail = make_shared<Monster>;
+	b.InBattle()
 	// 캐릭터 선택
 	// PlayerSelect();
 	// _player에 집어넣어주는것이 필요하다.
