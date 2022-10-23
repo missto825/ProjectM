@@ -21,6 +21,7 @@ public:
 	float _dodgeRate;
 	float _critRate;
 	float _critDamage;
+	float _skillDamage;
 
 	int _hp;
 	int _mp;

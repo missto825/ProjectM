@@ -75,7 +75,6 @@ public:								\
 #define ACHER 10007
 #define THIEF 10008
 
-
 #define NAME_SIZE 30
 
 
@@ -86,7 +85,7 @@ public:								\
 #define Knignt5 05
 #define Knignt6 06
 #define Knignt7 07
-#define Knignt8 08
+#define Knignt8 08 
 #define Knignt9 09
 #define Knignt10 010
 

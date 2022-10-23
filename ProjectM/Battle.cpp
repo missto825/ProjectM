@@ -10,12 +10,12 @@
 void Battle::InBattle(shared_ptr<Monster> enemy)
 {
 	_enemy = enemy;
-	shared_ptr<Player> p = GetPlayer();
+	shared_ptr<Player> p = GetPlayer(); 
 
 
 	while (true)
 	{
-		//버튼이 눌리는것을 기달리며
+		//버튼이 눌리는것을 기달리며 
 		//버튼이 어느게 눌렸는지 받아온다
 		int select = 0;
 		int eSelect = _enemy->Action();
@@ -34,9 +34,9 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (_enemy->_hp <= 0)
+		if (_enemy->currentHp <= 0)
 		{
-			_enemy->MonsterDead();
+			_enemy->MonsterDead(); 
 			break;
 		}
 		switch (eSelect)
@@ -50,7 +50,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (p->_hp <= 0)
+		if (p->currentHp <= 0)
 		{
 			p->PlayerDead();
 			break;
