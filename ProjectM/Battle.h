@@ -22,10 +22,8 @@ public:
 
 protected:
 
-	float y = 0.0;
-	float ySpeed = 0.0f;
-
 	shared_ptr<SpriteSheet> sprites;
+	shared_ptr<SpriteSheet> backGround;
 
 	int frame = 0;
 public:

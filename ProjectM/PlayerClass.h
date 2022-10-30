@@ -18,7 +18,7 @@ public:
 
 class Mage :public PlayerClass
 {
-public:
+public: 
 	int _wand;
 public:
 	void InMage();

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "SpriteSheet.h"
-
+#include <list>
 SpriteSheet::SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx)
 {
 	this->gfx = gfx;
@@ -67,6 +67,15 @@ SpriteSheet::SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx, int 
 	this->spriteWidth = spriteWidth;
 	this->spriteAccross = (int)bmp->GetSize().width / spriteWidth;
 }
+SpriteSheet::SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx, bool fullScreen)
+ : SpriteSheet(filename,gfx)
+{
+	if (fullScreen)
+	{
+		this->spriteHeight = BATTLESIZE_Y;
+		this->spriteWidth = WINDOWSIZE_X;
+	}
+}
 SpriteSheet::~SpriteSheet()
 {
 	if (bmp) bmp->Release();
@@ -83,10 +92,19 @@ void SpriteSheet::Draw()
 		D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height)
 	);
 }
-
+void SpriteSheet::Draw(bool fullScreen)
+{
+	gfx->GetRenderTarget()->DrawBitmap(
+		bmp,
+		D2D1::RectF(0.0f, 0.0f,
+			this->spriteWidth, this->spriteHeight),
+		1.0f,
+		D2D1_BITMAP_INTERPOLATION_MODE::D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR,
+		D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height)
+	);
+}
 void SpriteSheet::Draw(int index, int x, int y)
 {
-	spriteAccross = 5;
 	D2D_RECT_F src = D2D1::RectF(
 		(float)((index % spriteAccross) * spriteWidth),
 		(float)((index / spriteAccross) * spriteHeight),
@@ -95,7 +113,7 @@ void SpriteSheet::Draw(int index, int x, int y)
 
 	D2D_RECT_F dest = D2D1::RectF(
 		x, y,
-		x + spriteWidth, y + spriteHeight);
+		x + (spriteWidth * 2), y + (spriteHeight * 2));
 
 	gfx->GetRenderTarget()->DrawBitmap(
 		bmp,

@@ -5,16 +5,17 @@
 // 1. 작업자를 한명 더 고용해서 몬스터의연산을 시키고, 
 // 플레이어의 선택을 대기한다.
 
+
 // 2. 플레이어 
 void Battle::InBattle(shared_ptr<Monster> enemy)
 {
 	_enemy = enemy;
-	shared_ptr<Player> p = GetPlayer();
+	shared_ptr<Player> p = GetPlayer(); 
 
 
 	while (true)
 	{
-		//버튼이 눌리는것을 기달리며
+		//버튼이 눌리는것을 기달리며 
 		//버튼이 어느게 눌렸는지 받아온다
 		int select = 0;
 		int eSelect = _enemy->Action();
@@ -23,7 +24,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		switch (select)
 		{
 		case ATTACK:
-			p->Attack(_enemy);
+			p->Attack(_enemy,eSelect);
 			break;
 		case DEFENCE:
 			p->Defence(_enemy,eSelect);
@@ -33,8 +34,11 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (_enemy->currentHP <= 0)
-			_enemy->MonsterDead();
+		if (_enemy->currentHp <= 0)
+		{
+			_enemy->MonsterDead(); 
+			break;
+		}
 		switch (eSelect)
 		{
 		case ATTACK:
@@ -46,8 +50,11 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		default:
 			break;
 		}
-		if (p->currentHP <= 0)
+		if (p->currentHp <= 0)
+		{
 			p->PlayerDead();
+			break;
+		}
 
 	}
 }
@@ -56,10 +63,8 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 
 void Battle::Load()
 {
-	y = ySpeed = 0.0f;
-	
-	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/적.png", gfx, 28, 20);
-
+	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/초록달팽이.png", gfx, 28, 20);
+	backGround = make_shared<SpriteSheet>(L"../Resource/배경/헤네시스.png", gfx,true);
 	frame = 0;
 
 }
@@ -70,22 +75,11 @@ void Battle::Unload()
 
 void Battle::Render(shared_ptr<Graphics> gfx)
 {
-	gfx->ClearScreen(1.0f, 1.0f, 1.0f);
-	gfx->DrawCircle(325.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
-	gfx->DrawCircle(725.0f, y, 50.0f, 0.2f, 0.7f, 0.07f, 1.0f);
-
-	////sprites->
-	sprites->Draw((frame / 10) % 4, 40, 40);
+	backGround->Draw(true);
+	sprites->Draw((frame / 10) % 4, 900, 500);
 }
 
 void Battle::Update()
 {
-	ySpeed += 1.0f;
-	y += ySpeed;
-	if (y > 600)
-	{
-		y = 600;
-		ySpeed = -30.0f;
-	}
 	frame++;
 }

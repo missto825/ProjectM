@@ -62,7 +62,8 @@ public:								\
 
 #define GET_SINGLE(type)	type::GetInstance()
 
-
+// 배틀 배경 세로 크기
+#define BATTLESIZE_Y 680
 
 #define RUN 10001
 #define ATTACK 10002
@@ -73,4 +74,19 @@ public:								\
 #define MAGE 10006
 #define ACHER 10007
 #define THIEF 10008
+
+#define NAME_SIZE 30
+
+
+#define Knignt1 01
+#define Knignt2 02
+#define Knignt3 03
+#define Knignt4 04
+#define Knignt5 05
+#define Knignt6 06
+#define Knignt7 07
+#define Knignt8 08 
+#define Knignt9 09
+#define Knignt10 010
+
 

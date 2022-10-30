@@ -11,6 +11,7 @@ public:
 	virtual void Update();
 
 	void ShowFps();
+	void PlayerSelect(PlayerClass);
 	shared_ptr<Drawing> GetPalette() { return _draw; };
 	shared_ptr<Player> GetPlayer() { return _gamePlayer; };
 
