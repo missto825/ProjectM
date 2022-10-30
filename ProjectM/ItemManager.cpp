@@ -3,8 +3,8 @@
 #include "pch.h"
 
 void ItemManager::player()
-{
-	for(int Knight; Knight<100; Knight++)
+{/*
+	for (int Knight; Knight < 100; Knight++)
 	{
 		if (Knight == 1) {
 			break;
@@ -12,5 +12,6 @@ void ItemManager::player()
 		if (Knight == 2) {
 			break;
 		}
-	}
+	}*/
+}
 

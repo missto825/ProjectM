@@ -18,37 +18,36 @@ public:
 
 class Mage :public PlayerClass
 {
-public: 
+public:
 	int _wand;
 public:
-	void InMage();
+	void InMage() override;
 };
 
-
-class Thief
+class Thief :public PlayerClass
 {
 public:
 	int _shortsword;
 public:
-	void InThief();
+	void InThief() override;
 };
 
 
-class Warrior
+class Warrior :public PlayerClass
 {
 public:
 	int _sword;
 
 
 public:
-	void Inwarrior();
+	void Inwarrior() override;
 };
 
-class Archer
+class Archer :public PlayerClass
 {
 public:
 	int _bow;
 public:
-	void InArcher();
+	void InArcher() override;
 };
 

@@ -18,6 +18,18 @@ void PlayerClass::Choice1(int PlayerClass1)
 		break;
 	}
 }
+void PlayerClass::InMage()
+{
+}
+void PlayerClass::InThief()
+{
+}
+void PlayerClass::Inwarrior()
+{
+}
+void PlayerClass::InArcher()
+{
+}
 void Thief::InThief()
 {
 	int _str=2; //공격 체력

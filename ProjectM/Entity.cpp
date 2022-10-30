@@ -17,9 +17,16 @@ void Entity::StatCalculate()
 	
 }
 
-void Entity::Attack(shared_ptr<Entity> enemy)
+void Entity::Attack(shared_ptr<Entity> enemy, int enemySelect)
 {
+	// 전저에요
 	double damage = _attack + (_attack * DamageCalcualte());
+	switch (enemySelect)
+	{
+	default:
+		break;
+	}
+
 	
 }
 void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
@@ -39,12 +46,19 @@ void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
 			
 				return;				
 				
-		}
-			 Attack-_defence
-				
-			
-			
-			
+			}
+			if (enemy->_attack >= this->_defence)
+			{
+				if (enemy->_attack / 2 >= this->_defence)
+					this->currentHp -= (enemy->_attack - this->_defence);
+				else
+					this->currentHp -= (enemy->_attack / 2);
+
+			}
+			else
+			{
+				this->currentHp -= 1;
+			}
 		
 	case DEFENCE:
 		return;

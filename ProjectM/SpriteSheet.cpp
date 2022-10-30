@@ -78,7 +78,6 @@ SpriteSheet::SpriteSheet(const wchar_t* filename, shared_ptr<Graphics> gfx, bool
 }
 SpriteSheet::~SpriteSheet()
 {
-	if (bmp) bmp->Release();
 }
 
 void SpriteSheet::Draw()

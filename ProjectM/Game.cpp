@@ -25,8 +25,10 @@ void Game::Init(HWND hWnd)
 	graphics->ClearScreen(1.0f, 1.0f, 1.0f);
 	SceneManager::LoadInitialScene(make_shared<Battle>());
 	Battle b;
-	shared_ptr<Monster> snail = make_shared<Monster>;
-	b.InBattle()
+	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
+	//전저에요
+	b.InBattle(snail);
+	// 씬 매니저를 이용한 배틀 진입
 	// 캐릭터 선택
 	// PlayerSelect();
 	// _player에 집어넣어주는것이 필요하다.
@@ -73,7 +75,7 @@ void Game::PlayerSelect(PlayerClass)
 	splayer.playerClass = ACHER;
 	splayer.playerClass = THIEF;
 
-	int select;
+	int select = 0;
 	pc.Choice1(select);
 	//아처가 들어오면 그에 맞는 스탯을 넣어보자
 //Setplayer(&tPlayer);
