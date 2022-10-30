@@ -5,10 +5,14 @@
 #include "ProjectM.h"
 #include "Drawing.h"
 #include "Game.h"
+#include "Scene.h"
+#include "SceneManager.h"
+#include "Input.h"
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
-HINSTANCE hInst;                                
+HINSTANCE hInst;      
+HWND g_hWnd = NULL;
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 
@@ -17,8 +21,6 @@ ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
-
-shared_ptr<Drawing> GPalate = make_shared<Drawing>();
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -43,19 +45,25 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PROJECTM));
 
-    GPalate->Draw(L"전저에요", L"iami.bmp", 100, 100, 100, 100);
     MSG msg;
+    msg.message = WM_NULL;
     unique_ptr<Game> game = make_unique<Game>();
+
+    game->Init(g_hWnd);
+
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+    while (msg.message != WM_QUIT)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+        else
+        {
+            game->Update();
+        }
     }
-
+    CoUninitialize();
     return (int) msg.wParam;
 }
 
@@ -102,8 +110,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
-
+      0, 0, WINDOWSIZE_X, WINDOWSIZE_Y, nullptr, nullptr, hInstance, nullptr);
+   g_hWnd = hWnd;
    if (!hWnd)
    {
       return FALSE;
@@ -131,21 +139,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
     RECT rect;
     GetWindowRect(hWnd, &rect);
     switch (msg) {
-        break;
-    case WM_CREATE: // create window
-        GGame->Init(hWnd);
-        break;
-    case WM_TIMER:
-        GGame->Update();
     case WM_KEYDOWN:
-        switch (wParam)
-        {
-        case VK_LEFT:
-        default:
-            break;
-        }
+       Input::KeyDown(wParam);
+        break;
+    case WM_KEYUP:
+        Input::KeyUp(wParam);
     case WM_PAINT: // redraw window
-        GPalate->RedrawWindow(hWnd);
         break;
     case WM_COMMAND: // handle menu selection 
         break;

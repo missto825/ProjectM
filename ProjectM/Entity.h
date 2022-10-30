@@ -8,6 +8,8 @@ struct Stat
 	int _int; //마력 마나
 };
 
+
+
 class Entity
 {
 public:
@@ -19,6 +21,7 @@ public:
 	float _dodgeRate;
 	float _critRate;
 	float _critDamage;
+	float _skillDamage;
 
 	int _hp;
 	int _mp;
@@ -34,7 +37,7 @@ public:
 	virtual void StatCalculate();
 
 
-	virtual void Attack(shared_ptr<Entity> enemy);
+	virtual void Attack(shared_ptr<Entity> enemy,int enemySelect);
 	virtual void Defence(shared_ptr<Entity> enemy,int enemySelect);
 	virtual int DamageCalcualte();
 	
