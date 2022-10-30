@@ -4,7 +4,7 @@ class Monsterclass
 {
 
 };
-class snail {
+class snail{
 public:
 	void snail1();
 	

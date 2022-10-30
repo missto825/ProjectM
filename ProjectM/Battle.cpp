@@ -12,7 +12,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 	_enemy = enemy;
 	shared_ptr<Player> p = GetPlayer(); 
 
-
+	_enemy->currentHp = enemy->_hp;
 	while (true)
 	{
 		//버튼이 눌리는것을 기달리며 
@@ -42,7 +42,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		switch (eSelect)
 		{
 		case ATTACK:
-			_enemy->Attack(p); //두가지 형태로 만들것
+			_enemy->Attack(p,select); //두가지 형태로 만들것
 			break;
 		case DEFENCE:
 			_enemy->Defence(p, select);

@@ -37,7 +37,7 @@ public:
 	virtual void StatCalculate();
 
 
-	virtual void Attack(shared_ptr<Entity> enemy);
+	virtual void Attack(shared_ptr<Entity> enemy,int enemySelect);
 	virtual void Defence(shared_ptr<Entity> enemy,int enemySelect);
 	virtual int DamageCalcualte();
 	
