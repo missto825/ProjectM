@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SceneManager.h"
 #include "Scene.h"
-
+#include "Monster.h"
 shared_ptr<Scene> SceneManager::currentScene;
 bool SceneManager::Loading;
 
@@ -37,6 +37,10 @@ void SceneManager::Update()
 {
 	if (Loading) return;
 	currentScene->Update();
+}
+
+void SceneManager::InBattle(shared_ptr<Monster>)
+{
 }
 
 

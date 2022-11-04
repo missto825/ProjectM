@@ -8,6 +8,7 @@ void Scene::Load()
 
 void Scene::Unload()
 {
+
 }
 
 void Scene::Render(shared_ptr<Graphics> gfx)

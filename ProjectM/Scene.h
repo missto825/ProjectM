@@ -14,4 +14,6 @@ public:
 	virtual void Unload();
 	virtual void Render(shared_ptr<Graphics> gfx);
 	virtual void Update();
+
+protected:
 };

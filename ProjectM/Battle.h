@@ -7,6 +7,7 @@
 class Battle :public Game,public Scene
 {
 public:
+
 	shared_ptr<Monster> _enemy;
 	
 

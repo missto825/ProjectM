@@ -1,7 +1,6 @@
 #pragma once
 #include "Player.h"
 #include "Graphics.h"
-class Drawing;
 class Game
 {
 public:
@@ -10,16 +9,16 @@ public:
 	virtual void Init(HWND hWnd);
 	virtual void Update();
 
+	// FPS 표시
 	void ShowFps();
 	void PlayerSelect(PlayerClass);
-	shared_ptr<Drawing> GetPalette() { return _draw; };
+	// 플레이어 Get 함수
 	shared_ptr<Player> GetPlayer() { return _gamePlayer; };
 
-	//InitBattle();
-	// 수호
-	//PlayerSelect();
-	shared_ptr<Graphics> graphics;
+	//현재 윈도우의 핸들
 	HWND _hWnd;
-	shared_ptr<Drawing> _draw;
+	// 그래픽 처리 클래스
+	shared_ptr<Graphics> graphics;
+	// 게임의 플레이어
 	shared_ptr<Player> _gamePlayer;
 };

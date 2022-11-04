@@ -27,5 +27,8 @@ public:
 
 	static void Render(shared_ptr<Graphics> gfx);
 	static void Update();
+
+public:
+	static void InBattle(shared_ptr<Monster>);
 };
 

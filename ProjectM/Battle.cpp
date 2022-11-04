@@ -9,6 +9,7 @@
 // 2. 플레이어 
 void Battle::InBattle(shared_ptr<Monster> enemy)
 {
+	this->Load();
 	_enemy = enemy;
 	shared_ptr<Player> p = GetPlayer(); 
 
