@@ -19,13 +19,9 @@ void Entity::StatCalculate()
 
 void Entity::Attack(shared_ptr<Entity> enemy, int enemySelect)
 {
-	// 전저에요
-	double damage = _attack + (_attack * DamageCalcualte());
-	switch (enemySelect)
-	{
-	default:
-		break;
-	}
+	double damage = (_attack * 100) / (enemy->_defence + 100);
+
+}
 
 	
 }
