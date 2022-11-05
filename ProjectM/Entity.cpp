@@ -24,7 +24,7 @@ void Entity::Attack(shared_ptr<Entity> enemy, int enemySelect)
 }
 
 	
-}
+
 void Entity::Defence(shared_ptr<Entity> enemy, int enemySelect)
 {
 

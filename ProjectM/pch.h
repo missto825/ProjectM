@@ -45,7 +45,6 @@ using namespace std;
 
 // 게임 전역 객체
 extern unique_ptr<class Game> GGame;
-#define DRAW			GGame->GetPalette();
 #define PLAYER			GGame->GetPlayer();
 
 
