@@ -85,9 +85,10 @@
     <ClInclude Include="Monsterclass.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="inputclass.h" />
     <ClInclude Include="abcd.h" />
+    <ClInclude Include="inputclass.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
@@ -152,9 +153,10 @@
     <ClCompile Include="Monsterclass.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="inputclass.cpp" />
     <ClCompile Include="abcd.cpp" />
+    <ClCompile Include="inputclass.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Resource\달팽이\그래도달팽이는움직인다.png">

@@ -1,36 +1,36 @@
 #include "pch.h"
 #include "PlayerClass.h"
 #include "Entity.h"
-void PlayerClass::Choice1(int PlayerClass1)
+void PlayerClass::Choice1(int PlayerClass1, shared_ptr<Player> player)
 {
 	switch (classNum) {
 	case WARRIOR:
-		Inwarrior();
+		Inwarrior(player);
 		break;
 	case MAGE:
-		InMage();
+		InMage(player);
 		break;
 	case ACHER:
-		InArcher();
+		InArcher(player);
 		break;
 	case THIEF:
-		InThief();
+		InThief(player);
 		break;
 	}
 }
-void PlayerClass::InMage()
+void PlayerClass::InMage(shared_ptr<Player> player)
 {
 }
-void PlayerClass::InThief()
+void PlayerClass::InThief(shared_ptr<Player> player)
 {
 }
-void PlayerClass::Inwarrior()
+void PlayerClass::Inwarrior(shared_ptr<Player> player)
 {
 }
-void PlayerClass::InArcher()
+void PlayerClass::InArcher(shared_ptr<Player> player)
 {
 }
-void Thief::InThief()
+void Thief::InThief(shared_ptr<Player> player)
 {
 	int _str=2; //공격 체력
 	int _dex=6; //회피 공속
@@ -39,7 +39,7 @@ void Thief::InThief()
 
 }
 
-void Archer::InArcher()
+void Archer::InArcher(shared_ptr<Player> player)
 {
 	int _str = 7; //공격 체력
 	int _dex = 7; //회피 공속
@@ -47,7 +47,7 @@ void Archer::InArcher()
 	int _int = 2; //마력 마나
 
 }
-void Warrior::Inwarrior()
+void Warrior::Inwarrior(shared_ptr<Player> player)
 {
 	int _str = 10; //공격 체력
 	int _dex = 1; //회피 공속
@@ -55,10 +55,11 @@ void Warrior::Inwarrior()
 	int _int = 4; //마력 마나
 }
 
-void Mage::InMage()
+void Mage::InMage(shared_ptr<Player> player)
 {
 	MessageBox(NULL, L"MessageBox 테스트 입니다.", L"MessageBox 테스트", MB_OK);
 	int _str = 3; //공격 체력
+	player->playerStat._str = 3;
 	int _dex = 6; //회피 공속
 	int _luk = 1; //크리티컬 드랍율
 	int _int = 5; //마력 마나

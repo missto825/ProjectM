@@ -17,6 +17,7 @@ void Game::Init(HWND hWnd)
 	_hWnd = hWnd;
 
 	GET_SINGLE(Timer)->Init();
+	_gamePlayer = make_shared<Player>();
 
 	graphics = make_shared<Graphics>();
 	Scene::Init(graphics);
@@ -26,7 +27,7 @@ void Game::Init(HWND hWnd)
 	SceneManager::LoadInitialScene(make_shared<Battle>());
 	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
 	shared_ptr<Battle> battle = make_shared<Battle>();
-	InBattle(snail);
+	battle->InBattle(snail);
 	// 씬 매니저를 이용한 배틀 진입
 	// 캐릭터 선택
 	// PlayerSelect();
@@ -58,36 +59,10 @@ void Game::ShowFps()
 	::SetWindowText(_hWnd, text);
 }
 
-void Game::PlayerSelect(PlayerClass)
+void Game::PlayerSelect(int select,shared_ptr<Player> _gamePlayer)
 {
-
 	PlayerClass pc;
-	Player splayer = {};
-	splayer.playerStat. _str;
-	splayer.playerStat. _luk;
-	splayer.playerStat. _int;
-	splayer.playerStat. _dex;
-
-
-	splayer.playerClass = WARRIOR;
-	splayer.playerClass = MAGE;
-	splayer.playerClass = ACHER;
-	splayer.playerClass = THIEF;
-
-	int select = 0;
-	pc.Choice1(select);
-	//아처가 들어오면 그에 맞는 스탯을 넣어보자
-//Setplayer(&tPlayer);
-
-
-	//실행될떄 캐릭터값(스탯)을 가져오기
-	//
-	//CreatePlayer(choice, player);
-	//playclass
-
-
-
-
+	pc.Choice1(select,_gamePlayer);
 }
 
 

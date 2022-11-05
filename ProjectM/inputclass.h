@@ -1,9 +1,10 @@
 #pragma once
+#include "Game.h"
 #ifndef _INPUTCLASS_H_
 #define _INPUTCLASS_H_
 
 
-class InputClass
+class InputClass:public Game
 {
 public:
 	InputClass();
@@ -16,7 +17,7 @@ public:
 	void KeyUp(unsigned int);
 
 	bool IsKeyDown(unsigned int);
-
+	
 private:
 	bool m_keys[256];
 };

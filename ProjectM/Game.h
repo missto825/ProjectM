@@ -11,7 +11,7 @@ public:
 
 	// FPS 표시
 	void ShowFps();
-	void PlayerSelect(PlayerClass);
+	void PlayerSelect(int select, shared_ptr<Player> _gamePlayer);
 	// 플레이어 Get 함수
 	shared_ptr<Player> GetPlayer() { return _gamePlayer; };
 

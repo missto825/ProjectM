@@ -1,5 +1,6 @@
 #pragma once
 #include "pch.h"
+#include "Player.h"
 class PlayerClass
 {
 public:
@@ -8,11 +9,11 @@ public:
 
 
 	//¼öÈ£
-	void Choice1(int PlayerClass1);
-	virtual void InMage();
-	virtual void InThief();
-	virtual void Inwarrior();
-	virtual void InArcher();
+	void Choice1(int PlayerClass1, shared_ptr<Player> player);
+	virtual void InMage(shared_ptr<Player> player);
+	virtual void InThief(shared_ptr<Player> player);
+	virtual void Inwarrior(shared_ptr<Player> player);
+	virtual void InArcher(shared_ptr<Player> player);
 };
 
 
@@ -21,7 +22,7 @@ class Mage :public PlayerClass
 public:
 	int _wand;
 public:
-	void InMage() override;
+	void InMage(shared_ptr<Player> player) override;
 };
 
 class Thief :public PlayerClass
@@ -29,7 +30,7 @@ class Thief :public PlayerClass
 public:
 	int _shortsword;
 public:
-	void InThief() override;
+	void InThief(shared_ptr<Player> player) override;
 };
 
 
@@ -38,9 +39,9 @@ class Warrior :public PlayerClass
 public:
 	int _sword;
 
-
+	
 public:
-	void Inwarrior() override;
+	void Inwarrior(shared_ptr<Player> player) override;
 };
 
 class Archer :public PlayerClass
@@ -48,6 +49,6 @@ class Archer :public PlayerClass
 public:
 	int _bow;
 public:
-	void InArcher() override;
+	void InArcher(shared_ptr<Player> player) override;
 };
 

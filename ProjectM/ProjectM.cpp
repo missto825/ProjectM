@@ -8,6 +8,7 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "Input.h"
+#include "inputclass.h"
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
