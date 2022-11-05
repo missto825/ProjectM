@@ -37,13 +37,7 @@ enum ClassType
 
 Player::Player()
 {
-    switch (_playerClass->classNum)
-    {/*
-    case KNITGHT:
-        _playerStat = */
-    default:
-        break;
-    }
+
 }
 
 void Player::PlayerDead()

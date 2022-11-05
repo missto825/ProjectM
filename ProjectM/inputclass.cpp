@@ -27,13 +27,23 @@ void InputClass::Initalize()
 
 void InputClass::KeyDown(unsigned int input)
 {
-	switch (wParam)//가상키 처리
+	switch (input)//가상키 처리
+	{
 	case VK_NUMPAD1:
-		PlayerSelect(PlayerClass)
+		PlayerSelect(WARRIOR, _gamePlayer);
 			break;
+	case VK_NUMPAD2:
+		PlayerSelect(MAGE, _gamePlayer);
+		break;
+	case VK_NUMPAD3:
+		PlayerSelect(ACHER, _gamePlayer);
+		break;
+	case VK_NUMPAD4:
+		PlayerSelect(THIEF, _gamePlayer);
+		break;
 		//키가 눌렸다면 그 상태를 배열에 저장합니다.
 		m_keys[input] = true;
-		return;
+	}
 }
 
 void InputClass::KeyUp(unsigned int input)
