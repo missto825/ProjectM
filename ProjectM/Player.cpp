@@ -34,3 +34,12 @@ enum ClassType
 //    }
 //
 //};
+
+Player::Player()
+{
+
+}
+
+void Player::PlayerDead()
+{
+}

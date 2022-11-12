@@ -4,10 +4,12 @@
 
 class PlayerClass;
 
+
 class Player : public Entity
 {
 public:
-	shared_ptr<PlayerClass> _playerClass;
+	Player();
+	int _playerClass;
 
 	Stat playerStat;
 	int playerClass;
