@@ -1,5 +1,6 @@
 #pragma once
 #include "pch.h"
+#include "Battle.h"
 #include "Player.h"
 class PlayerClass
 {

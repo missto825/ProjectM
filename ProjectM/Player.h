@@ -1,12 +1,12 @@
 #pragma once
 #include "Entity.h"
 #include "Monster.h"
-#include "PlayerClass.h"
+
+class PlayerClass;
 
 class Player : public Entity
 {
 public:
-	Player();
 	shared_ptr<PlayerClass> _playerClass;
 
 	Stat playerStat;
