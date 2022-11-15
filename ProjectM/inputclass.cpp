@@ -1,7 +1,19 @@
-#include "inputclass.h"
 #include "pch.h"
+#include "inputclass.h"
 #include "Game.h"
 
+
+InputClass::InputClass()
+{
+}
+
+InputClass::InputClass(const InputClass&)
+{
+}
+
+InputClass::~InputClass()
+{
+}
 
 void InputClass::Initalize()
 {
@@ -21,16 +33,16 @@ void InputClass::KeyDown(unsigned int input)
 	switch (input)//가상키 처리
 	{
 	case VK_NUMPAD1:
-		PlayerSelect(WARRIOR,this->_gamePlayer);
+		PlayerSelect(WARRIOR,_gamePlayer);
 			break;
 	case VK_NUMPAD2:
-		PlayerSelect(MAGE, this->_gamePlayer);
+		PlayerSelect(MAGE, _gamePlayer);
 		break;
 	case VK_NUMPAD3:
-		PlayerSelect(ACHER, this->_gamePlayer);
+		PlayerSelect(ACHER, _gamePlayer);
 		break;
 	case VK_NUMPAD4:
-		PlayerSelect(THIEF, this->_gamePlayer);
+		PlayerSelect(THIEF, _gamePlayer);
 		break;
 		//키가 눌렸다면 그 상태를 배열에 저장합니다.
 		m_keys[input] = true;

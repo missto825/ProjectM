@@ -1,13 +1,11 @@
 #include "pch.h"
 #include "Game.h"
-#include "Drawing.h"
 #include "Timer.h"
 #include "Battle.h"
 #include "PlayerClass.h"
 #include "player.h"
 #include "Entity.h"
 #include "SceneManager.h"
-class Drawing;
 
 
 
