@@ -20,7 +20,7 @@ void Entity::StatCalculate()
 void Entity::Attack(shared_ptr<Entity> enemy, int enemySelect)
 {
 	double damage = (_attack * 100) / (enemy->_defence + 100);
-
+	enemy->currentHp -= damage ;
 }
 
 	

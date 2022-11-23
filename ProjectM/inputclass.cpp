@@ -1,10 +1,13 @@
-#include "inputclass.h"
 #include "pch.h"
+#include "inputclass.h"
+#include "Game.h"
+
+
 InputClass::InputClass()
 {
 }
 
-InputClass::InputClass(const InputClass& other)
+InputClass::InputClass(const InputClass&)
 {
 }
 
@@ -30,7 +33,7 @@ void InputClass::KeyDown(unsigned int input)
 	switch (input)//가상키 처리
 	{
 	case VK_NUMPAD1:
-		PlayerSelect(WARRIOR, _gamePlayer);
+		PlayerSelect(WARRIOR,_gamePlayer);
 			break;
 	case VK_NUMPAD2:
 		PlayerSelect(MAGE, _gamePlayer);

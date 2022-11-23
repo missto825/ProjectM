@@ -18,6 +18,8 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 	{
 		//버튼이 눌리는것을 기달리며 
 		//버튼이 어느게 눌렸는지 받아온다
+		//버튼이 선택이 되었을때 플레이어행동을 선택한다
+		//
 		int select = 0;
 		int eSelect = _enemy->Action();
 		//승열
