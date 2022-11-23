@@ -7,7 +7,7 @@
 #include "Game.h"
 #include "Scene.h"
 #include "SceneManager.h"
-#include "Input.h"
+#include "inputclass.h"
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -138,12 +138,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     RECT rect;
     GetWindowRect(hWnd, &rect);
+    InputClass ic;
     switch (msg) {
     case WM_KEYDOWN:
-       Input::KeyDown(wParam);
+        ic.KeyDown(wParam);
         break;
     case WM_KEYUP:
-        Input::KeyUp(wParam);
+        ic.KeyUp(wParam);
     case WM_PAINT: // redraw window
         break;
     case WM_COMMAND: // handle menu selection 

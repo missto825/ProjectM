@@ -39,7 +39,7 @@ class Warrior :public PlayerClass
 public:
 	int _sword;
 
-
+	
 public:
 	void Inwarrior(shared_ptr<Player> player) override;
 };

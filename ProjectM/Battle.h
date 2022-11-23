@@ -20,8 +20,8 @@ public:
 	void InBattle(shared_ptr<Monster> enemy);
 
 
-
 protected:
+
 
 	shared_ptr<SpriteSheet> sprites;
 	shared_ptr<SpriteSheet> backGround;

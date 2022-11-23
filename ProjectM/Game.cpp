@@ -1,13 +1,11 @@
 #include "pch.h"
 #include "Game.h"
-#include "Drawing.h"
 #include "Timer.h"
 #include "Battle.h"
 #include "PlayerClass.h"
 #include "player.h"
 #include "Entity.h"
 #include "SceneManager.h"
-class Drawing;
 
 
 
@@ -27,7 +25,7 @@ void Game::Init(HWND hWnd)
 	SceneManager::LoadInitialScene(make_shared<Battle>());
 	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
 	shared_ptr<Battle> battle = make_shared<Battle>();
-	InBattle(snail);
+	battle->InBattle(snail);
 	// 씬 매니저를 이용한 배틀 진입
 	// 캐릭터 선택
 	// PlayerSelect();

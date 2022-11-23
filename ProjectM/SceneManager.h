@@ -2,6 +2,7 @@
 #include "Graphics.h"
 #include "Scene.h"
 #include "SpriteSheet.h"
+#include "Monster.h"
 enum SceneList
 {
 	battle,
