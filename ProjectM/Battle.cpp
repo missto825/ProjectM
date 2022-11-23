@@ -64,7 +64,7 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 
 void Battle::Load()
 {
-	sprites = make_shared<SpriteSheet>(L"../Resource/달팽이/초록달팽이.png", gfx, 28, 20);
+	sprites = make_shared<SpriteSheet>(L"../Resource/몬스터/초록달팽이.png", gfx, 28, 20);
 	backGround = make_shared<SpriteSheet>(L"../Resource/배경/헤내시스 맵.png", gfx,true);
 	frame = 0;
 
