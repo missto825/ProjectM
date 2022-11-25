@@ -89,6 +89,7 @@
     <ClInclude Include="inputclass.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="ClassSelectScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectM.cpp">
@@ -157,6 +158,7 @@
     <ClCompile Include="inputclass.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="ClassSelectScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Resource\달팽이\그래도달팽이는움직인다.png">

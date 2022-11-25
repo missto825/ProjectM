@@ -75,6 +75,7 @@ void Battle::Load()
 void Battle::Unload()
 {
 	sprites = 0;
+	backGround = 0;
 }
 
 void Battle::Render(shared_ptr<Graphics> gfx)

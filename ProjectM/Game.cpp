@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Timer.h"
 #include "Battle.h"
+#include "ClassSelectScene.h"
 #include "PlayerClass.h"
 #include "player.h"
 #include "Entity.h"
@@ -22,7 +23,8 @@ void Game::Init(HWND hWnd)
 	SceneManager::Init();
 	graphics->Init(hWnd);
 	graphics->ClearScreen(1.0f, 1.0f, 1.0f);
-	SceneManager::LoadInitialScene(make_shared<Battle>());
+	SceneManager::LoadInitialScene(make_shared<ClassSelectScene>(_gamePlayer));
+
 	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
 	shared_ptr<Battle> battle = make_shared<Battle>();
 	battle->InBattle(snail);
