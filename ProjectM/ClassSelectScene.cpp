@@ -33,5 +33,5 @@ void ClassSelectScene::Render(shared_ptr<Graphics> gfx)
 void ClassSelectScene::Update()
 {
 	frame++;
-	check_input->IsKeyDown(1)
+	check_input->IsKeyDown(1);
 }

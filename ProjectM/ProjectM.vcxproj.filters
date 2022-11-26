@@ -203,6 +203,21 @@
     <Image Include="Arrow.bmp">
       <Filter>Resource</Filter>
     </Image>
+    <Image Include="..\Resource\UI\HP내부.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\UI\HP바.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\플레이어\idle.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\플레이어\walk.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\플레이어\attack.png">
+      <Filter>Resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ProjectM.rc">
