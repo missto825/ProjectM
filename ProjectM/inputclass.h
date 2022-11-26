@@ -7,6 +7,7 @@
 class InputClass:public Game
 {
 public:
+public:
 	InputClass();
 	InputClass(const InputClass&);
 	~InputClass();

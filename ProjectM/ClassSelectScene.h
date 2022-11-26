@@ -8,7 +8,7 @@
 class ClassSelectScene : public Scene
 {
 public:
-	ClassSelectScene(shared_ptr<Player>);
+	ClassSelectScene(shared_ptr<Player>,shared_ptr<InputClass> ic);
 
 	shared_ptr<Player> gamePlayer;
 public:

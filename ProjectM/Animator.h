@@ -18,7 +18,7 @@ public:
 public:
 	vector<Animation> animation;
 
-	void ChangeAnimation(int num);
+	void ChangeAnimation(shared_ptr<SpriteSheet> ani);
 	
 };
 

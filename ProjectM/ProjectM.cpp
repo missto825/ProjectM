@@ -11,7 +11,8 @@
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
-HINSTANCE hInst;      
+HINSTANCE hInst;
+shared_ptr<InputClass> ic = make_shared<InputClass>();
 HWND g_hWnd = NULL;
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
@@ -49,7 +50,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     msg.message = WM_NULL;
     unique_ptr<Game> game = make_unique<Game>();
 
-    game->Init(g_hWnd);
+    game->Init(g_hWnd,ic);
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
@@ -138,13 +139,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     RECT rect;
     GetWindowRect(hWnd, &rect);
-    InputClass ic;
     switch (msg) {
     case WM_KEYDOWN:
-        ic.KeyDown(wParam);
+        ic->KeyDown(wParam);
         break;
     case WM_KEYUP:
-        ic.KeyUp(wParam);
+        ic->KeyUp(wParam);
     case WM_PAINT: // redraw window
         break;
     case WM_COMMAND: // handle menu selection 

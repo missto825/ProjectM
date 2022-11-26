@@ -1,9 +1,10 @@
 #include "pch.h"
 #include "ClassSelectScene.h"
 #include "PlayerClass.h"
-ClassSelectScene::ClassSelectScene(shared_ptr<Player> player)
+ClassSelectScene::ClassSelectScene(shared_ptr<Player> player,shared_ptr<InputClass> ic)
 {
 	gamePlayer = player;
+	check_input = ic;
 }
 void ClassSelectScene::ClassSelect(int selectNum)
 {

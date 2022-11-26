@@ -6,7 +6,7 @@ Animator::Animator(int num)
 
 }
 
-void Animator::ChangeAnimation(int num)
+void Animator::ChangeAnimation(shared_ptr<SpriteSheet> ani)
 {
-
+	
 }

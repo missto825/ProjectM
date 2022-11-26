@@ -9,12 +9,11 @@
 #include "SceneManager.h"
 
 
-
-void Game::Init(HWND hWnd)
+void Game::Init(HWND hWnd,shared_ptr<InputClass> ic)
 {
 	CoInitialize(NULL);
 	_hWnd = hWnd;
-
+	_ic = ic;
 	GET_SINGLE(Timer)->Init();
 	_gamePlayer = make_shared<Player>();
 
@@ -23,7 +22,7 @@ void Game::Init(HWND hWnd)
 	SceneManager::Init();
 	graphics->Init(hWnd);
 	graphics->ClearScreen(1.0f, 1.0f, 1.0f);
-	SceneManager::LoadInitialScene(make_shared<ClassSelectScene>(_gamePlayer));
+	SceneManager::LoadInitialScene(make_shared<ClassSelectScene>(_gamePlayer, _ic));
 
 	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
 	shared_ptr<Battle> battle = make_shared<Battle>();
