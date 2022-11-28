@@ -1,7 +1,8 @@
 #pragma once
 #include "Player.h"
 #include "Graphics.h"
-#include "inputclass.h"
+
+class InputClass;
 class Game
 {
 public:
