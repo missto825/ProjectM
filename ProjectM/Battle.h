@@ -26,6 +26,7 @@ protected:
 	shared_ptr<SpriteSheet> sprites;
 	shared_ptr<SpriteSheet> backGround;
 
+	shared_ptr<SpriteSheet> player;
 	shared_ptr<SpriteSheet> hpbar;
 	shared_ptr<SpriteSheet> hpbarbar;
 

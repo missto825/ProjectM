@@ -69,8 +69,9 @@ void Battle::Load()
 	sprites = make_shared<SpriteSheet>(L"../Resource/몬스터/초록달팽이.png", gfx, 28, 20);
 	backGround = make_shared<SpriteSheet>(L"../Resource/배경/헤내시스 맵.png", gfx,true);
 	frame = 0;
-	hpbar = make_shared<SpriteSheet>(L"../Resource/UI/HP내부.png",gfx);
+	player = make_shared<SpriteSheet>(L"../Resource/플레이어/walk.png", gfx, 73, 75);
 	hpbarbar = make_shared<SpriteSheet>(L"../Resource/UI/HP바.png", gfx);
+	hpbar = make_shared<SpriteSheet>(L"../Resource/UI/HP내부.png",gfx);
 }
 
 void Battle::Unload()
@@ -82,10 +83,12 @@ void Battle::Unload()
 void Battle::Render(shared_ptr<Graphics> gfx)
 {
 	backGround->Draw(true);
-	sprites->Draw((frame / 10) % 4, 900, 500);
+	sprites->Draw((frame / 10) % 4, 900, 560);
 
 	// if 플레이어가 도달했을때만 렌더링
+	player->Draw((frame / 10) % 4, 400,455) ;
 	hpbar->Draw(true);
+	hpbarbar->Draw(true);
 	sprites->Draw(true);
 }
 
