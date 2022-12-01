@@ -91,6 +91,32 @@ void SpriteSheet::Draw()
 		D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height)
 	);
 }
+void SpriteSheet::Draw(int x, int y)
+{
+	D2D_RECT_F dest = D2D1::RectF(
+		x, y,
+		x + (spriteWidth * 2), y + (spriteHeight * 2));
+	gfx->GetRenderTarget()->DrawBitmap(
+		bmp,
+		dest,
+		1.0f,
+		D2D1_BITMAP_INTERPOLATION_MODE::D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR,
+		D2D1::RectF(0.0f, 0.0f, bmp->GetSize().width, bmp->GetSize().height)
+	);
+}
+void SpriteSheet::Draw(int x, int y,int width,int height)
+{
+	D2D_RECT_F dest = D2D1::RectF(
+		x, y,
+		x + (width * 2), y + (height * 2));
+	gfx->GetRenderTarget()->DrawBitmap(
+		bmp,
+		dest,
+		1.0f,
+		D2D1_BITMAP_INTERPOLATION_MODE::D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR,
+		D2D1::RectF(0.0f, 0.0f, width, height)
+	);
+}
 void SpriteSheet::Draw(bool fullScreen)
 {
 	gfx->GetRenderTarget()->DrawBitmap(

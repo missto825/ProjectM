@@ -18,6 +18,7 @@ public:
 	void Draw();
 	void Draw(bool fullScreen);
 	void Draw(int index, int x, int y);
-
+	void Draw(int x, int y);
+	void Draw(int x, int y, int width, int height);
 };
 
