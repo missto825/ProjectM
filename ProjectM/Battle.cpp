@@ -69,7 +69,7 @@ void Battle::Load()
 	sprites = make_shared<SpriteSheet>(L"../Resource/몬스터/초록달팽이.png", gfx, 28, 20);
 	backGround = make_shared<SpriteSheet>(L"../Resource/배경/헤내시스 맵.png", gfx,true);
 	frame = 0;
-	player = make_shared<SpriteSheet>(L"../Resource/플레이어/walk.png", gfx, 73, 75);
+	player = make_shared<SpriteSheet>(L"../Resource/플레이어/walk.png", gfx, 40, 20);
 	hpbarbar = make_shared<SpriteSheet>(L"../Resource/UI/HP바.png", gfx);
 	hpbar = make_shared<SpriteSheet>(L"../Resource/UI/HP내부.png",gfx);
 }
