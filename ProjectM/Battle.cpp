@@ -88,8 +88,9 @@ void Battle::Render(shared_ptr<Graphics> gfx)
 	// if 플레이어가 도달했을때만 렌더링
 	//xy 높이 옆면 
 	player->Draw((frame / 10) % 4, 400,455) ;
-	hpbar->Draw(370,400,50,100);
-	hpbarbar->Draw(370 ,400);
+>>>>>>>>> Temporary merge branch 2
+	hpbar->Draw(true);
+	hpbarbar->Draw(true);
 	sprites->Draw(true);
 }
 
