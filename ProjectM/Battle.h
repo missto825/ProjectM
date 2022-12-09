@@ -4,10 +4,11 @@
 #include "Game.h"
 #include "Scene.h"
 #include "SpriteSheet.h"
-class Battle :public Game,public Scene
+#include "inputclass.h"
+class Battle :public Scene
 {
 public:
-
+	Battle(shared_ptr<Player> player, shared_ptr<InputClass> ic);
 	shared_ptr<Monster> _enemy;
 	
 
@@ -15,7 +16,7 @@ public:
 	shared_ptr<HWND> _attackButton;
 	shared_ptr<HWND> _defenceButton;
 	shared_ptr<HWND> _runButton;
-
+	
 public:
 	void InBattle(shared_ptr<Monster> enemy);
 
@@ -29,7 +30,8 @@ protected:
 	shared_ptr<SpriteSheet> player;
 	shared_ptr<SpriteSheet> hpbar;
 	shared_ptr<SpriteSheet> hpbarbar;
-
+	shared_ptr<Player> _player;
+	shared_ptr<InputClass> _ic;
 	int frame = 0;
 public:
 	

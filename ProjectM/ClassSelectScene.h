@@ -13,7 +13,7 @@ public:
 	shared_ptr<Player> gamePlayer;
 public:
 
-	void ClassSelect(int selectNum);
+	void ClassSelect();
 public:
 
 	shared_ptr<SpriteSheet> sprites;

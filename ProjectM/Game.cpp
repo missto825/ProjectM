@@ -23,11 +23,6 @@ void Game::Init(HWND hWnd,shared_ptr<InputClass> ic)
 	graphics->Init(hWnd);
 	graphics->ClearScreen(1.0f, 1.0f, 1.0f);
 	SceneManager::LoadInitialScene(make_shared<ClassSelectScene>(_gamePlayer, _ic));
-
-	shared_ptr<Monster> snail = make_shared<Monster>(2,6,6,1);
-	shared_ptr<Battle> battle = make_shared<Battle>();
-	SceneManager::SwitchScene(make_shared<Battle>());
-		battle->InBattle(snail);
 	// 씬 매니저를 이용한 배틀 진입
 	// 캐릭터 선택
 	// PlayerSelect();

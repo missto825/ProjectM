@@ -6,11 +6,25 @@ ClassSelectScene::ClassSelectScene(shared_ptr<Player> player,shared_ptr<InputCla
 	gamePlayer = player;
 	check_input = ic;
 }
-void ClassSelectScene::ClassSelect(int selectNum)
+void ClassSelectScene::ClassSelect()
 {
 	PlayerClass	ps;
-	ps.Choice1(selectNum,gamePlayer);
-	SceneManager::SwitchScene(make_shared<Battle>());
+	if (check_input->IsKeyDown(49))
+	{
+		ps.Choice1(1, gamePlayer);
+	}
+	if (check_input->IsKeyDown(50))
+	{
+		ps.Choice1(2, gamePlayer);
+	}
+	if (check_input->IsKeyDown(51))
+	{
+		ps.Choice1(3, gamePlayer);
+	}
+	if (check_input->IsKeyDown(52))
+	{
+		ps.Choice1(4, gamePlayer);
+	}
 }
 void ClassSelectScene::Load()
 {
@@ -34,5 +48,5 @@ void ClassSelectScene::Render(shared_ptr<Graphics> gfx)
 void ClassSelectScene::Update()
 {
 	frame++;
-	check_input->IsKeyDown(1);
+	ClassSelect();
 }

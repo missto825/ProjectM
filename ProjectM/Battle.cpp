@@ -6,12 +6,18 @@
 // 플레이어의 선택을 대기한다.
 
 
+Battle::Battle(shared_ptr<Player> player, shared_ptr<InputClass> ic) 
+{
+	_player = player;
+	_ic = ic;
+}
+
 // 2. 플레이어 
 void Battle::InBattle(shared_ptr<Monster> enemy)
 {
 	this->Load();
 	_enemy = enemy;
-	shared_ptr<Player> p = GetPlayer(); 
+	
 
 	_enemy->currentHp = enemy->_hp;
 	while (true)
@@ -22,15 +28,20 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		//
 		int select = 0;
 		int eSelect = _enemy->Action();
+		if (_ic->IsKeyDown(65))
+		{
+			select = 1;
+		}
+		
 		//승열
 		//아현
 		switch (select)
 		{
 		case ATTACK:
-			p->Attack(_enemy,eSelect);
+			_player->Attack(_enemy,eSelect);
 			break;
 		case DEFENCE:
-			p->Defence(_enemy,eSelect);
+			_player->Defence(_enemy,eSelect);
 			break;
 		case RUN:
 			return;
@@ -45,17 +56,17 @@ void Battle::InBattle(shared_ptr<Monster> enemy)
 		switch (eSelect)
 		{
 		case ATTACK:
-			_enemy->Attack(p,select); //두가지 형태로 만들것
+			_enemy->Attack(_player,select); //두가지 형태로 만들것
 			break;
 		case DEFENCE:
-			_enemy->Defence(p, select);
+			_enemy->Defence(_player, select);
 			break;
 		default:
 			break;
 		}
-		if (p->currentHp <= 0)
+		if (_player->currentHp <= 0)
 		{
-			p->PlayerDead();
+			_player->PlayerDead();
 			break;
 		}
 

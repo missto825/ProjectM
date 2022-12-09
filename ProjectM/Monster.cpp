@@ -7,6 +7,7 @@ Monster::Monster(int str, int dex,int luk,int inti)
 	this->_Stat._dex = dex;
 	this->_Stat._luk = luk;
 	this->_Stat._int = inti;
+	StatCalculate();
 }
 int Monster::Action()
 {
